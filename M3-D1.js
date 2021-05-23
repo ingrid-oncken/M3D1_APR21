@@ -261,14 +261,11 @@ let arr11 = ["Mykola", "Ingrid", "Alessandra", "Helena", "Theodora"]
 const funcEx11 = (arr) => {
   let lenghtArr = []
   arr.forEach((str) => lenghtArr.push(str.length))
-  console.log(lenghtArr)
 
   let max = Math.max(...lenghtArr)
-  console.log(max)
   let index = lenghtArr.indexOf(max)
-  // console.log(index)
-  // console.log(`the name in the index ${index} is ${arr[index]}`)
+  return `The largest name is ${arr[index]} with ${max} letters`
 }
-funcEx11(arr11)
-console.log(`The largest name has ${funcEx11(arr11)} letters`)
+console.log(funcEx11(arr11))
+
 console.log(`\n\n`)
