@@ -33,14 +33,7 @@ Create a function to test whether an array of integers of length 2 does not cont
 11)
 Create a function to find the longest string from a given array of strings.
 
-12)
-Create a function to find the types of a given angle.
 
-Types of angles:
-    Acute angle: An angle between 0 and 90 degrees.
-    Right angle: An 90 degree angle.
-    Obtuse angle: An angle between 90 and 180 degrees.
-    Straight angle: A 180 degree angle.
 
 13)
 Create a function to find the index of the greatest element of a given array of integers
@@ -115,7 +108,7 @@ console.log(funcEx3(`Love`, 2))
 console.log(funcEx3(`Ingrid`, 1))
 console.log(funcEx3(`Hello`, 3))
 
-// var str = "Hello World";
+// let str = "Hello World";
 // str = str.slice(0, 3) + str.slice(4);
 // console.log(str);
 
@@ -268,4 +261,116 @@ const funcEx11 = (arr) => {
 }
 console.log(funcEx11(arr11))
 
+console.log(`\n\n`)
+
+
+// 12)Create a function to find the types of a given angle.
+
+// Types of angles:
+//     Acute angle: An angle between 0 and 90 degrees.
+//     Right angle: An 90 degree angle.
+//     Obtuse angle: An angle between 90 and 180 degrees.
+//     Straight angle: A 180 degree angle.
+// Mykola's choice 
+console.log(`******************** EX 12 ******`)
+const funcEx12 = (angle) => angle < 90 ? 'Acute' : angle === 90 ? 'right' : angle > 90 && angle < 180 ? 'Obtuse' : angle === 180 ? 'straight' : false
+
+console.log(funcEx12(180))
+console.log(`\n\n`)
+
+// 13) Create a function to find the index of the greatest element of a given array of integers
+console.log(`******************** EX 13 ******`)
+const funcEx13 = (arr) => {
+  let index = []
+  arr.forEach(num => index.push(num))
+  let greatest = Math.max(...index)
+  return greatest
+}
+console.log(`The greetest is ${funcEx13([3, 4, 5, 10, 7])}`)
+
+console.log(`\n\n`)
+
+// 14) Create a function to get the largest even number from an array of integers.
+console.log(`******************** EX 14 ******`)
+const funcEx14 = (arr) => {
+  let array = []
+  arr.forEach(num => num % 2 === 0 ? array.push(num) : "no pair number here" )  
+  return Math.max(array)
+  
+}
+console.log(`The largest even number is ${funcEx14([3,4,21,11])}`)
+console.log(`\n\n`)
+
+// 15)Create a function to check from two given integers, whether one is positive and another one is negative.
+console.log(`******************** EX 15 ******`)
+const funcEx15 = (n1,n2) => n1 < 0 && n2 > 0 || n1 > 0 && n2 < 0 ? true : false
+console.log(`True if there is one number + and another -   ${funcEx15(-1,1)}`)
+console.log(`\n\n`)
+
+
+// 16)Create a function to create new string with first 3 characters are in lower case and the others in upper case. 
+// If the string length is less than 3 convert all the characters in upper case.
+console.log(`******************** EX 16 ******`)
+
+const funcEx16 = (str) => {
+  if(str.length < 3){
+    return str.toUpperCase()
+  }else {
+    let newStr = str.substring(3,-1).toLowerCase()
+    let newStr2 = str.substring(3).toUpperCase()
+    return newStr + newStr2
+  }
+}
+console.log(funcEx16('hey giorgia'))
+console.log(`\n\n`)
+
+// 17)Create a function to calculate the sum of the two given integers, 
+// If the sum is in the range 50..80 return 65 other wise return 80.
+console.log(`******************** EX 17 ******`)
+
+const funcEx17 = (n1,n2) => {
+  let sum = n1 + n2
+  if(sum > 50 && sum < 80){
+    return 65
+  }else{
+    return 80
+  }
+}
+console.log(funcEx17(30,30))
+
+console.log(`\n\n`)
+
+// 18) Create a function to convert a number to a string, the content of which depends on the number's factors. Follow next example:
+
+// If the number has 3 as a factor, output 'Diego'.
+// If the number has 5 as a factor, output 'Riccardo'.
+// If the number has 7 as a factor, output 'Stefano'.
+// If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
+// Examples
+// 28's factors are 1, 2, 4, 7, 14, 28.
+// this would be a simple "Stefano".
+// 30's factors are 1, 2, 3, 5, 6, 10, 15, 30.
+// this would be a "DiegoRiccardo".
+// 34 has four factors: 1, 2, 17, and 34.
+// this would be "34".
+console.log(`******************** EX 18 ******`)
+
+const funcEx18 = (n) => {
+  let str = ''
+  return n % 3 === 0 ? str +='Diego' : n % 5 === 0 ? str += 'Riccardo' : n%7 ===0 ? str += 'Stefano' : str += n
+}
+console.log(funcEx18(101))
+console.log(`\n\n`)
+
+// 19) Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC
+console.log(`******************** EX 18 ******`)
+    const funcEx19 = (str) =>{
+      console.log(`The acronym of ${str} is:`)
+      let arr = str.split(' ')
+      let acronym = ''
+      arr.forEach(word => acronym += word.charAt(0).toUpperCase())
+       
+      return acronym
+    }
+console.log(funcEx19("information tecnology"))
 console.log(`\n\n`)
